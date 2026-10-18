@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="Minod Chathura - BICT (Hons) undergraduate, University of Vavuniya." />
+    <title>Minod Chathura | Portfolio</title>
+    <link rel="icon" type="image/jpeg" href="assets/profile.jpg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="progress"></div>
+    <canvas id="bg"></canvas>
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+
+    <header class="nav">
+      <a href="#home" class="logo">Minod<span>.</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+      <nav id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#activities">Activities</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="hero-text">
+          <p class="eyebrow">Hello, I'm</p>
+          <h1>Minod Chathura</h1>
+          <h2>BICT (Hons) Undergraduate | <span id="typing"></span><span class="cursor"></span></h2>
+          <p>
+            I am a BICT (Hons) undergraduate at the University of Vavuniya who enjoys building software. I am
+            currently learning more about <strong>Data Analytics</strong>,
+            <strong>Artificial Intelligence</strong> and <strong>Machine Learning</strong>.
+          </p>
+          <div class="btns">
+            <a class="btn primary" href="assets/Minod_Chathura_CV.pdf" download>Download CV</a>
+            <a class="btn" href="#projects">View Projects</a>
+          </div>
+          <div class="stats">
+            <div class="stat"><b data-count="3.69" data-dec="2">0</b><span>Current GPA</span></div>
+            <div class="stat"><b data-count="3">0</b><span>Projects</span></div>
+            <div class="stat"><b data-count="5">0</b><span>Programming Languages</span></div>
+          </div>
+        </div>
+        <div class="hero-img">
+          <div class="ring">
+            <img
+              src="assets/profile.jpeg"
+              alt="Portrait of Minod Chathura"
+              onerror="
+                this.onerror = null;
+                this.src =
+                  'data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 200\'><rect width=\'200\' height=\'200\' fill=\'%231e293b\'/><circle cx=\'100\' cy=\'78\' r=\'38\' fill=\'%2338bdf8\'/><path d=\'M30 200c0-48 31-76 70-76s70 28 70 76z\' fill=\'%2338bdf8\'/></svg>';
+              "
+            />
+          </div>
+          <div class="socials">
+            <a
+              href="https://www.linkedin.com/in/minod-chathura-203947365"
+              target="_blank"
+              rel="noopener"
+              aria-label="LinkedIn"
+              ><svg viewBox="0 0 24 24">
+                <path
+                  d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.1c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21h-4z"
+                /></svg
+            ></a>
+            <a href="https://github.com/Minodchathura" target="_blank" rel="noopener" aria-label="GitHub"
+              ><svg viewBox="0 0 24 24">
+                <path
+                  d="M12 .5a11.5 11.5 0 00-3.64 22.4c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 015.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0012 .5z"
+                /></svg
+            ></a>
+            <a href="mailto:minodchathura2004@gmail.com" aria-label="Email"
+              ><svg viewBox="0 0 24 24">
+                <path d="M2 5h20v14H2zm2 2v.5l8 5.5 8-5.5V7zm16 3.4l-8 5.5-8-5.5V17h16z" /></svg
+            ></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="reveal">
+        <h3 class="title">About Me</h3>
+        <p>
+          I am a motivated Information and Communication Technology undergraduate with a strong foundation in
+          programming, object-oriented software development and database concepts. I enjoy turning ideas into
+          working applications and I keep improving my technical skills through academic and personal
+          projects.
+        </p>
+        <p>
+          I have worked with <strong>C, C++, Java, C# and Python</strong>, and I build web pages using
+          <strong>HTML, CSS and JavaScript</strong>. Alongside software development, I am now exploring
+          <strong>Data Analytics, AI and Machine Learning</strong> to understand how data can be used to solve
+          real problems.
+        </p>
+        <div class="cards">
+          <div class="card">
+            <h4>Career Objective</h4>
+            <p>
+              To apply my programming knowledge, learn from experienced professionals and gain practical
+              industry experience through an internship or entry-level role.
+            </p>
+          </div>
+          <div class="card">
+            <h4>Currently Learning</h4>
+            <p class="tags">
+              <span>Data Analytics</span><span>Artificial Intelligence</span><span>Machine Learning</span>
+            </p>
+          </div>
+          <div class="card">
+            <h4>Languages</h4>
+            <p>English and Sinhala.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="education" class="reveal">
+        <h3 class="title">Education</h3>
+        <div class="timeline">
+          <div class="item">
+            <span class="date">2025 - Present</span>
+            <h4>Bachelor of Information and Communication Technology (Honours)</h4>
+            <p class="place">University of Vavuniya</p>
+            <p>
+              Currently following the Bachelor of Information and Communication Technology (Honours) Degree.
+              Studying software engineering, web development, databases, networking, programming, and system
+              analysis &amp; design.
+            </p>
+            <p class="tags"><span>GPA 3.69</span></p>
+          </div>
+          <div class="item">
+            <span class="date">G.C.E. Advanced Level</span>
+            <h4>Engineering Technology Stream</h4>
+            <p class="place">C.W.W. Kannangara Central College, Hunumulla</p>
+            <p>
+              Successfully completed G.C.E. Advanced Level with Engineering Technology, Information &amp;
+              Communication Technology, and Science for Technology.
+            </p>
+          </div>
+        </div>
+
+        <h4 class="subtitle">Certifications</h4>
+        <div class="cert-grid">
+          <article class="card cert">
+            <button
+              class="cert-img"
+              type="button"
+              data-full="assets/certificates/python-for-beginners.jpg"
+              aria-label="View Python for Beginners certificate in full size"
+            >
+              <img
+                src="assets/certificates/python-for-beginners.jpg"
+                alt="Python for Beginners certificate"
+                loading="lazy"
+              />
+              <span class="cert-view">View certificate</span>
+            </button>
+            <div class="cert-body">
+              <p class="cert-issuer">CODL, University of Moratuwa</p>
+              <h4>Python for Beginners</h4>
+              <span class="cert-date">Oct 9, 2025</span>
+              <p>
+                Completed an online beginner programme in Python, conducted by the Department of Computer
+                Science &amp; Engineering, Faculty of Engineering, University of Moratuwa.
+              </p>
+              <p class="cert-code">Code: IK8OYS1nad</p>
+              <a class="link" href="https://open.uom.lk/verify" target="_blank" rel="noopener"
+                >Verify &rarr;</a
+              >
+            </div>
+          </article>
+          <article class="card cert">
+            <button
+              class="cert-img"
+              type="button"
+              data-full="assets/certificates/python-programming.jpg"
+              aria-label="View Python Programming certificate in full size"
+            >
+              <img
+                src="assets/certificates/python-programming.jpg"
+                alt="Python Programming certificate"
+                loading="lazy"
+              />
+              <span class="cert-view">View certificate</span>
+            </button>
+            <div class="cert-body">
+              <p class="cert-issuer">CODL, University of Moratuwa</p>
+              <h4>Python Programming</h4>
+
+              <p>
+                Completed an online Python Programming programme conducted by the Department of Computer
+                Science &amp; Engineering, University of Moratuwa, building on the beginner course.
+              </p>
+              <p class="cert-code">Code: gOzFum50Bu</p>
+              <a class="link" href="https://open.uom.lk/verify" target="_blank" rel="noopener"
+                >Verify &rarr;</a
+              >
+            </div>
+          </article>
+          <article class="card cert">
+            <button
+              class="cert-img"
+              type="button"
+              data-full="assets/certificates/data-analyst-course.jpg"
+              aria-label="View Free Data Analyst Course certificate in full size"
+            >
+              <img
+                src="assets/certificates/data-analyst-course.jpg"
+                alt="Free Data Analyst Course certificate"
+                loading="lazy"
+              />
+              <span class="cert-view">View certificate</span>
+            </button>
+            <div class="cert-body">
+              <p class="cert-issuer">Simplilearn SkillUP</p>
+              <h4>Free Data Analyst Course</h4>
+              <span class="cert-date">Oct 13, 2025</span>
+              <p>
+                Successfully completed an online Data Analyst course, supporting my goal of growing into Data
+                Analytics, AI and Machine Learning.
+              </p>
+              <p class="cert-code">Certificate code: 9164821</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills" class="reveal">
+        <h3 class="title">Skills</h3>
+        <div class="cards">
+          <div class="card">
+            <h4>Programming</h4>
+            <p class="tags">
+              <span>C++</span><span>C</span><span>Java</span><span>C#</span><span>Python</span>
+            </p>
+          </div>
+          <div class="card">
+            <h4>Web Development</h4>
+            <p class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></p>
+          </div>
+          <div class="card">
+            <h4>Database</h4>
+            <p class="tags"><span>MySQL</span></p>
+          </div>
+          <div class="card">
+            <h4>Version Control</h4>
+            <p class="tags"><span>Git</span><span>GitHub</span></p>
+          </div>
+          <div class="card">
+            <h4>Development Tools</h4>
+            <p class="tags">
+              <span>VS Code</span><span>Visual Studio</span><span>Figma</span><span>Notepad++</span>
+            </p>
+          </div>
+          <div class="card">
+            <h4>Soft Skills</h4>
+            <p class="tags">
+              <span>Problem Solving</span><span>Teamwork</span><span>Leadership</span
+              ><span>Communication</span><span>Time Management</span><span>Critical Thinking</span
+              ><span>Adaptability</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="reveal">
+        <h3 class="title">Projects</h3>
+        <div class="cards">
+          <article class="card proj">
+            <a
+              class="proj-cover anim"
+              href="project-management-app.html"
+              style="--g: linear-gradient(135deg, #1e3a8a, #7c3aed)"
+              aria-label="Management App"
+              ><div class="mock">
+                <div class="mock-bar"><i></i><i></i><i></i></div>
+                <div class="mock-body">
+                  <span class="ln" style="--i: 0"><span class="k">using</span> System.Data.SqlClient;</span
+                  ><span class="ln" style="--i: 1"
+                    ><span class="k">var</span> con = <span class="k">new</span> SqlConnection();</span
+                  ><span class="ln" style="--i: 2">con.Open();</span
+                  ><span class="ln" style="--i: 3"><span class="c">// sign up, create, deposit</span></span
+                  ><span class="ln" style="--i: 4">cmd.ExecuteNonQuery();</span><span class="cur"></span>
+                </div></div
+            ></a>
+            <div class="proj-body">
+              <h4>Management App</h4>
+              <p class="tags"><span>C#</span><span>Windows Forms</span><span>SQL Server</span></p>
+              <p>
+                A desktop application for creating and managing customer accounts, built with C# and Windows
+                Forms and connected to a SQL Server database.
+              </p>
+              <div class="proj-links">
+                <a class="btn small primary" href="project-management-app.html">View Details</a
+                ><a
+                  class="link"
+                  href="https://github.com/Minodchathura/Banking-Management-Application"
+                  target="_blank"
+                  rel="noopener"
+                  >GitHub &rarr;</a
+                >
+              </div>
+            </div>
+          </article>
+          <article class="card proj">
+            <a
+              class="proj-cover anim"
+              href="project-atm-system.html"
+              style="--g: linear-gradient(135deg, #0f766e, #0ea5e9)"
+              aria-label="ATM Banking System"
+              ><div class="mock">
+                <div class="mock-bar"><i></i><i></i><i></i></div>
+                <div class="mock-body">
+                  <span class="ln" style="--i: 0">Welcome To The ATM</span
+                  ><span class="ln" style="--i: 1">Insert Card (k/s/i/l):</span
+                  ><span class="ln" style="--i: 2">Press 1 to withdraw money</span
+                  ><span class="ln" style="--i: 3">Press 2 to check balance</span
+                  ><span class="ln" style="--i: 4">Enter PIN: ****</span><span class="cur"></span>
+                </div></div
+            ></a>
+            <div class="proj-body">
+              <h4>ATM Banking System</h4>
+              <p class="tags"><span>C</span></p>
+              <p>
+                A console-based ATM program written in C with account number and PIN verification for multiple
+                accounts.
+              </p>
+              <div class="proj-links">
+                <a class="btn small primary" href="project-atm-system.html">View Details</a
+                ><a
+                  class="link"
+                  href="https://github.com/Minodchathura/ATM-Machine-project-"
+                  target="_blank"
+                  rel="noopener"
+                  >GitHub &rarr;</a
+                >
+              </div>
+            </div>
+          </article>
+          <article class="card proj">
+            <a
+              class="proj-cover anim"
+              href="project-file-manager.html"
+              style="--g: linear-gradient(135deg, #b45309, #db2777)"
+              aria-label="Python File Management App"
+              ><div class="mock">
+                <div class="mock-bar"><i></i><i></i><i></i></div>
+                <div class="mock-body">
+                  <span class="ln" style="--i: 0">===== FILE MANAGEMENT APP =====</span
+                  ><span class="ln" style="--i: 1">1. Create File</span
+                  ><span class="ln" style="--i: 2">2. View All Files</span
+                  ><span class="ln" style="--i: 3">3. Delete File</span
+                  ><span class="ln" style="--i: 4">4. Read File</span
+                  ><span class="ln" style="--i: 5">5. Edit File</span><span class="cur"></span>
+                </div></div
+            ></a>
+            <div class="proj-body">
+              <h4>Python File Management App</h4>
+              <p class="tags"><span>Python</span></p>
+              <p>A menu-driven command-line application to create, view, read, edit and delete files.</p>
+              <div class="proj-links">
+                <a class="btn small primary" href="project-file-manager.html">View Details</a
+                ><a
+                  class="link"
+                  href="https://github.com/Minodchathura/python-file-management-system"
+                  target="_blank"
+                  rel="noopener"
+                  >GitHub &rarr;</a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="activities" class="reveal">
+        <h3 class="title">Experience &amp; Activities</h3>
+        <div class="cards">
+          <div class="card">
+            <h4>Junior Prefect &amp; Senior Prefect</h4>
+            <p class="place">School Leadership</p>
+            <p>
+              Held leadership positions and helped maintain discipline and organise school activities,
+              building teamwork and communication skills.
+            </p>
+          </div>
+          <div class="card">
+            <h4>Chess Club</h4>
+            <p>Member of the Chess Club, actively participating in strategic and competitive activities.</p>
+          </div>
+          <div class="card">
+            <h4>Buddhist Society</h4>
+            <p>Member of the Buddhist Society, contributing to community service and cultural programs.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="reveal">
+        <h3 class="title">Contact &amp; Links</h3>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <p>
+              I am open to internships and entry-level opportunities. Send me a message and I will reply as
+              soon as possible.
+            </p>
+            <ul class="contact">
+              <li>
+                <strong>Email:</strong>
+                <a href="mailto:minodchathura2004@gmail.com">minodchathura2004@gmail.com</a>
+              </li>
+              <li>
+                <strong>LinkedIn:</strong>
+                <a href="https://www.linkedin.com/in/minod-chathura-203947365" target="_blank" rel="noopener"
+                  >linkedin.com/in/minod-chathura-203947365</a
+                >
+              </li>
+              <li>
+                <strong>GitHub:</strong>
+                <a href="https://github.com/Minodchathura" target="_blank" rel="noopener"
+                  >github.com/Minodchathura</a
+                >
+              </li>
+            </ul>
+            <a class="btn primary" href="assets/Minod_Chathura_CV.pdf" download>Download CV</a>
+          </div>
+          <form id="contactForm" class="card form" novalidate>
+            <h4>Send me a message</h4>
+            <div class="field">
+              <label for="name">Full Name</label
+              ><input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Your full name"
+                autocomplete="name"
+                required
+              /><small class="err"></small>
+            </div>
+            <div class="field">
+              <label for="email">Email Address</label
+              ><input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="you@example.com"
+                autocomplete="email"
+                required
+              /><small class="err"></small>
+            </div>
+            <div class="field">
+              <label for="subject">Subject</label
+              ><input
+                id="subject"
+                name="subject"
+                type="text"
+                placeholder="What is this about?"
+                required
+              /><small class="err"></small>
+            </div>
+            <div class="field">
+              <label for="message">Message</label
+              ><textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="Write your message here..."
+                required
+              ></textarea
+              ><small class="err"></small>
+            </div>
+            <button type="submit" class="btn primary">Send Message</button>
+            <p id="formStatus" class="status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="foot-grid">
+        <div>
+          <a href="#home" class="logo">Minod<span>.</span></a>
+          <p>
+            BICT (Hons) undergraduate building software and learning Data Analytics, AI and Machine Learning.
+          </p>
+        </div>
+        <div>
+          <h5>Quick Links</h5>
+          <a href="#about">About</a>
+          <a href="#education">Education</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div>
+          <h5>Connect</h5>
+          <div class="socials left">
+            <a
+              href="https://www.linkedin.com/in/minod-chathura-203947365"
+              target="_blank"
+              rel="noopener"
+              aria-label="LinkedIn"
+              ><svg viewBox="0 0 24 24">
+                <path
+                  d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.1c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21h-4z"
+                /></svg
+            ></a>
+            <a href="https://github.com/Minodchathura" target="_blank" rel="noopener" aria-label="GitHub"
+              ><svg viewBox="0 0 24 24">
+                <path
+                  d="M12 .5a11.5 11.5 0 00-3.64 22.4c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 015.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0012 .5z"
+                /></svg
+            ></a>
+            <a href="mailto:minodchathura2004@gmail.com" aria-label="Email"
+              ><svg viewBox="0 0 24 24">
+                <path d="M2 5h20v14H2zm2 2v.5l8 5.5 8-5.5V7zm16 3.4l-8 5.5-8-5.5V17h16z" /></svg
+            ></a>
+          </div>
+        </div>
+      </div>
+      <p class="copy">&copy; <span id="year"></span> Minod Chathura. All rights reserved.</p>
+    </footer>
+    <div id="lightbox" class="lightbox" hidden>
+      <button class="lb-close" type="button" aria-label="Close">&times;</button>
+      <img id="lbImg" alt="Certificate full size" />
+    </div>
+    <button id="top" aria-label="Back to top">&uarr;</button>
+
+    <script src="script.js"></script>
+  </body>
+</html>

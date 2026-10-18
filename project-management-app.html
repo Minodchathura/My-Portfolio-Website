@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="Management App - project by Minod Chathura." />
+    <title>Management App | Minod Chathura</title>
+    <link rel="icon" type="image/jpeg" href="assets/profile.jpg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="project-page">
+    <div id="progress"></div>
+    <canvas id="bg"></canvas>
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <header class="nav">
+      <a href="index.html" class="logo">Minod<span>.</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+      <nav id="navLinks">
+        <a href="index.html">Home</a><a href="index.html#projects">All Projects</a
+        ><a href="index.html#contact">Contact</a>
+      </nav>
+    </header>
+    <main>
+      <section class="p-hero">
+        <a class="back" href="index.html#projects">&larr; Back to Projects</a>
+        <p class="eyebrow">Project</p>
+        <h1>Management App</h1>
+        <p class="tags"><span>C#</span><span>Windows Forms</span><span>SQL Server</span></p>
+        <p class="lead">
+          A desktop application for creating and managing customer accounts, built with C# and Windows Forms
+          and connected to a SQL Server database.
+        </p>
+        <div class="btns">
+          <a
+            class="btn primary"
+            href="https://github.com/Minodchathura/Banking-Management-Application"
+            target="_blank"
+            rel="noopener"
+            >View on GitHub</a
+          ><a class="btn" href="index.html#projects">All Projects</a>
+        </div>
+      </section>
+      <section class="reveal">
+        <h3 class="title">Overview</h3>
+        <div class="cards">
+          <div class="card">
+            <h4>Goal</h4>
+            <p>
+              To practise building a complete desktop application that registers users, stores their data in a
+              database and lets them be managed through a clear interface.
+            </p>
+          </div>
+          <div class="card">
+            <h4>My Contribution</h4>
+            <p>
+              Designed the Windows Forms screens and implemented all features myself, including the SQL Server
+              connection for storing, retrieving and updating customer information.
+            </p>
+          </div>
+          <div class="card">
+            <h4>Tools Used</h4>
+            <p class="tags"><span>C#</span><span>Windows Forms</span><span>SQL Server</span></p>
+          </div>
+        </div>
+      </section>
+      <section class="reveal">
+        <h3 class="title">Key Features</h3>
+        <ul class="feat">
+          <li>User registration (sign up) and login</li>
+          <li>Dashboard showing the total number of accounts and users</li>
+          <li>Create new accounts with personal details and account type</li>
+          <li>Search, view, update and delete accounts</li>
+          <li>Deposit money and check the current balance</li>
+          <li>Customer area with account balance, profile and change password</li>
+          <li>Customer data stored and retrieved from SQL Server</li>
+        </ul>
+      </section>
+      <section class="reveal">
+        <h3 class="title">Screenshots</h3>
+        <div class="gallery">
+          <figure class="shot">
+            <button
+              type="button"
+              class="shot-btn"
+              data-full="assets/projects/management-app/01-sign-in.png"
+              data-cap="Sign In: Login screen with email and password, and a Sign Up option for new users."
+              aria-label="View Sign In screenshot"
+            >
+              <img
+                src="assets/projects/management-app/01-sign-in.png"
+                alt="Management App - Sign In"
+                loading="lazy"
+              />
+            </button>
+            <figcaption>
+              <b>Sign In</b
+              ><span>Login screen with email and password, and a Sign Up option for new users.</span>
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <button
+              type="button"
+              class="shot-btn"
+              data-full="assets/projects/management-app/02-sign-up.png"
+              data-cap="Sign Up: New user registration with account number, NIC, email, phone number and password confirmation."
+              aria-label="View Sign Up screenshot"
+            >
+              <img
+                src="assets/projects/management-app/02-sign-up.png"
+                alt="Management App - Sign Up"
+                loading="lazy"
+              />
+            </button>
+            <figcaption>
+              <b>Sign Up</b
+              ><span
+                >New user registration with account number, NIC, email, phone number and password
+                confirmation.</span
+              >
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <button
+              type="button"
+              class="shot-btn"
+              data-full="assets/projects/management-app/03-dashboard.png"
+              data-cap="Dashboard: Management dashboard with a side menu and the total number of accounts and users."
+              aria-label="View Dashboard screenshot"
+            >
+              <img
+                src="assets/projects/management-app/03-dashboard.png"
+                alt="Management App - Dashboard"
+                loading="lazy"
+              />
+            </button>
+            <figcaption>
+              <b>Dashboard</b
+              ><span>Management dashboard with a side menu and the total number of accounts and users.</span>
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <button
+              type="button"
+              class="shot-btn"
+              data-full="assets/projects/management-app/04-account-creation.png"
+              data-cap="Account Creation: Form to create a new account: name, NIC, address, birthday, gender, phone, email and account type."
+              aria-label="View Account Creation screenshot"
+            >
+              <img
+                src="assets/projects/management-app/04-account-creation.png"
+                alt="Management App - Account Creation"
+                loading="lazy"
+              />
+            </button>
+            <figcaption>
+              <b>Account Creation</b
+              ><span
+                >Form to create a new account: name, NIC, address, birthday, gender, phone, email and account
+                type.</span
+              >
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <button
+              type="button"
+              class="shot-btn"
+              data-full="assets/projects/management-app/05-view-accounts.png"
+              data-cap="View Accounts: Search for an account by its account number and view the details."
+              aria-label="View View Accounts screenshot"
+            >
+              <img
+                src="assets/projects/management-app/05-view-accounts.png"
+                alt="Management App - View Accounts"
+                loading="lazy"
+              />
+            </button>
+            <figcaption>
+              <b>View Accounts</b
+              ><span>Search for an account by its account number and view the details.</span>
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <button
+              type="button"
+              class="shot-btn"
+              data-full="assets/projects/management-app/06-account-details.png"
+              data-cap="Account Details: View, update or delete the details of a selected account."
+              aria-label="View Account Details screenshot"
+            >
+              <img
+                src="assets/projects/management-app/06-account-details.png"
+                alt="Management App - Account Details"
+                loading="lazy"
+              />
+            </button>
+            <figcaption>
+              <b>Account Details</b><span>View, update or delete the details of a selected account.</span>
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <button
+              type="button"
+              class="shot-btn"
+              data-full="assets/projects/management-app/07-all-users.png"
+              data-cap="All Users: List and search users by account number, with the option to delete an account."
+              aria-label="View All Users screenshot"
+            >
+              <img
+                src="assets/projects/management-app/07-all-users.png"
+                alt="Management App - All Users"
+                loading="lazy"
+              />
+            </button>
+            <figcaption>
+              <b>All Users</b
+              ><span>List and search users by account number, with the option to delete an account.</span>
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <button
+              type="button"
+              class="shot-btn"
+              data-full="assets/projects/management-app/08-deposit.png"
+              data-cap="Deposit: Find an account, check the current balance and deposit an amount."
+              aria-label="View Deposit screenshot"
+            >
+              <img
+                src="assets/projects/management-app/08-deposit.png"
+                alt="Management App - Deposit"
+                loading="lazy"
+              />
+            </button>
+            <figcaption>
+              <b>Deposit</b><span>Find an account, check the current balance and deposit an amount.</span>
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <button
+              type="button"
+              class="shot-btn"
+              data-full="assets/projects/management-app/09-my-account.png"
+              data-cap="My Account: Customer view showing the account number and available balance."
+              aria-label="View My Account screenshot"
+            >
+              <img
+                src="assets/projects/management-app/09-my-account.png"
+                alt="Management App - My Account"
+                loading="lazy"
+              />
+            </button>
+            <figcaption>
+              <b>My Account</b><span>Customer view showing the account number and available balance.</span>
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <button
+              type="button"
+              class="shot-btn"
+              data-full="assets/projects/management-app/10-my-profile.png"
+              data-cap="My Profile: Customer profile details with a Change Password section."
+              aria-label="View My Profile screenshot"
+            >
+              <img
+                src="assets/projects/management-app/10-my-profile.png"
+                alt="Management App - My Profile"
+                loading="lazy"
+              />
+            </button>
+            <figcaption>
+              <b>My Profile</b><span>Customer profile details with a Change Password section.</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+      <section class="reveal">
+        <h3 class="title">What I Practised</h3>
+        <p class="tags">
+          <span>Object-Oriented Programming</span><span>Database Management</span><span>Windows Forms UI</span
+          ><span>SQL Queries</span><span>Input Validation</span>
+        </p>
+      </section>
+      <section class="pn">
+        <a class="card" href="project-file-manager.html"
+          ><span>&larr; Previous</span><b>Python File Management App</b></a
+        >
+        <a class="card next" href="project-atm-system.html"
+          ><span>Next &rarr;</span><b>ATM Banking System</b></a
+        >
+      </section>
+    </main>
+    <footer class="site-footer">
+      <p class="copy">&copy; <span id="year"></span> Minod Chathura. All rights reserved.</p>
+    </footer>
+    <div id="lightbox" class="lightbox" hidden>
+      <button class="lb-close" type="button" aria-label="Close">&times;</button>
+      <button class="lb-nav lb-prev" type="button" aria-label="Previous">&#8249;</button>
+      <figure>
+        <img id="lbImg" alt="Screenshot full size" />
+        <figcaption id="lbCap"></figcaption>
+      </figure>
+      <button class="lb-nav lb-next" type="button" aria-label="Next">&#8250;</button>
+    </div>
+    <script src="project.js"></script>
+  </body>
+</html>
