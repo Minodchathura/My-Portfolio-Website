@@ -1,209 +1,232 @@
-// menu
+// Minod Chathura - portfolio script
+// Used by index.html and the three project pages.
+
+// tell the CSS that JavaScript is working (needed for the fade-in effect)
 document.documentElement.classList.add("js");
-const menuBtn = document.getElementById("menuBtn"),
-  navLinks = document.getElementById("navLinks");
-menuBtn.onclick = () => {
-  const o = navLinks.classList.toggle("open");
-  menuBtn.setAttribute("aria-expanded", o);
-};
-navLinks.querySelectorAll("a").forEach((a) => (a.onclick = () => navLinks.classList.remove("open")));
+
+// ---------- mobile menu ----------
+var menuBtn = document.getElementById("menuBtn");
+var navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", function () {
+  var isOpen = navLinks.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded", isOpen);
+});
+
+// close the menu after clicking a link
+var navItems = navLinks.querySelectorAll("a");
+for (var i = 0; i < navItems.length; i++) {
+  navItems[i].addEventListener("click", function () {
+    navLinks.classList.remove("open");
+    menuBtn.setAttribute("aria-expanded", "false");
+  });
+}
+
+// ---------- footer year ----------
 document.getElementById("year").textContent = new Date().getFullYear();
-// typing effect
-const words = ["Software Developer", "Data Analytics Learner", "AI & ML Enthusiast"],
-  t = document.getElementById("typing");
-let w = 0,
-  c = 0,
-  del = false;
-(function type() {
-  const s = words[w];
-  t.textContent = s.slice(0, c);
-  if (!del && c === s.length) {
-    del = true;
-    return setTimeout(type, 1400);
-  }
-  if (del && c === 0) {
-    del = false;
-    w = (w + 1) % words.length;
-  }
-  c += del ? -1 : 1;
-  setTimeout(type, del ? 40 : 90);
-})();
-// reveal + counters
-const io = new IntersectionObserver(
-  (es) =>
-    es.forEach((e) => {
-      if (e.isIntersecting) {
-        e.target.classList.add("show");
-        io.unobserve(e.target);
+
+// ---------- fade-in when sections come into view ----------
+var revealItems = document.querySelectorAll(".reveal");
+
+var observer = new IntersectionObserver(
+  function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
       }
-    }),
-  { threshold: 0.1 },
+    });
+  },
+  { threshold: 0.1 }
 );
-document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
-document.querySelectorAll("[data-count]").forEach((el) => {
-  const end = +el.dataset.count,
-    dec = +(el.dataset.dec || 0);
-  let st = null;
-  const step = (ts) => {
-    st = st || ts;
-    const p = Math.min((ts - st) / 1500, 1);
-    el.textContent = (end * p).toFixed(dec);
-    if (p < 1) requestAnimationFrame(step);
-  };
-  requestAnimationFrame(step);
-});
-// scroll: progress bar, active link, back-to-top
-const secs = document.querySelectorAll("main section[id]"),
-  links = navLinks.querySelectorAll("a"),
-  bar = document.getElementById("progress"),
-  topBtn = document.getElementById("top");
-addEventListener("scroll", () => {
-  const h = document.documentElement;
-  bar.style.width = (scrollY / (h.scrollHeight - innerHeight)) * 100 + "%";
-  let cur = "home";
-  secs.forEach((s) => {
-    if (scrollY >= s.offsetTop - 140) cur = s.id;
-  });
-  links.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === "#" + cur));
-  topBtn.classList.toggle("show", scrollY > 500);
-});
-topBtn.onclick = () => scrollTo({ top: 0, behavior: "smooth" });
-// card spotlight + 3D tilt
-document.querySelectorAll(".card").forEach((card) => {
-  card.addEventListener("mousemove", (e) => {
-    const r = card.getBoundingClientRect(),
-      x = e.clientX - r.left,
-      y = e.clientY - r.top;
-    card.style.setProperty("--x", x + "px");
-    card.style.setProperty("--y", y + "px");
-    card.style.transform = `perspective(700px) rotateX(${(y / r.height - 0.5) * -8}deg) rotateY(${(x / r.width - 0.5) * 8}deg) translateY(-4px)`;
-  });
-  card.addEventListener("mouseleave", () => (card.style.transform = ""));
-});
-// particle network background
-const cv = document.getElementById("bg"),
-  cx = cv.getContext("2d");
-let P = [];
-function size() {
-  cv.width = innerWidth;
-  cv.height = innerHeight;
-  P = Array.from({ length: Math.min(90, Math.floor(innerWidth / 14)) }, () => ({
-    x: Math.random() * cv.width,
-    y: Math.random() * cv.height,
-    vx: (Math.random() - 0.5) * 0.5,
-    vy: (Math.random() - 0.5) * 0.5,
-  }));
-}
-size();
-addEventListener("resize", size);
-const m = { x: -999, y: -999 };
-addEventListener("mousemove", (e) => {
-  m.x = e.clientX;
-  m.y = e.clientY;
-});
-(function draw() {
-  cx.clearRect(0, 0, cv.width, cv.height);
-  P.forEach((p, i) => {
-    p.x += p.vx;
-    p.y += p.vy;
-    if (p.x < 0 || p.x > cv.width) p.vx *= -1;
-    if (p.y < 0 || p.y > cv.height) p.vy *= -1;
-    cx.fillStyle = "rgba(56,189,248,.8)";
-    cx.beginPath();
-    cx.arc(p.x, p.y, 1.8, 0, 7);
-    cx.fill();
-    for (let j = i + 1; j < P.length; j++) {
-      const q = P[j],
-        d = Math.hypot(p.x - q.x, p.y - q.y);
-      if (d < 120) {
-        cx.strokeStyle = `rgba(168,85,247,${0.35 * (1 - d / 120)})`;
-        cx.beginPath();
-        cx.moveTo(p.x, p.y);
-        cx.lineTo(q.x, q.y);
-        cx.stroke();
-      }
-    }
-    const dm = Math.hypot(p.x - m.x, p.y - m.y);
-    if (dm < 150) {
-      cx.strokeStyle = `rgba(56,189,248,${0.6 * (1 - dm / 150)})`;
-      cx.beginPath();
-      cx.moveTo(p.x, p.y);
-      cx.lineTo(m.x, m.y);
-      cx.stroke();
-    }
-  });
-  requestAnimationFrame(draw);
-})();
-// contact form validation + send (opens the visitor's email app)
-const form = document.getElementById("contactForm"),
-  status = document.getElementById("formStatus");
-function check(f) {
-  const v = f.value.trim(),
-    box = f.closest(".field"),
-    err = box.querySelector(".err");
-  let m = "";
-  if (!v) m = "This field is required.";
-  else if (f.type === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v))
-    m = "Please enter a valid email address.";
-  else if (f.id === "message" && v.length < 10) m = "Message should be at least 10 characters.";
-  err.textContent = m;
-  box.classList.toggle("invalid", !!m);
-  return !m;
-}
-form.querySelectorAll("input,textarea").forEach((f) => f.addEventListener("blur", () => check(f)));
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const ok = [...form.querySelectorAll("input,textarea")].map(check).every(Boolean);
-  if (!ok) {
-    status.className = "status bad";
-    status.textContent = "Please fix the highlighted fields.";
-    return;
-  }
-  const d = new FormData(form);
-  const body = `Name: ${d.get("name")}\nEmail: ${d.get("email")}\n\n${d.get("message")}`;
-  location.href = `mailto:minodchathura2004@gmail.com?subject=${encodeURIComponent(d.get("subject"))}&body=${encodeURIComponent(body)}`;
-  status.className = "status ok";
-  status.textContent = "Thank you! Your email app is opening so you can send the message.";
-  form.reset();
+
+revealItems.forEach(function (item) {
+  observer.observe(item);
 });
 
-// certificate lightbox
-const lb = document.getElementById("lightbox"),
-  lbImg = document.getElementById("lbImg");
-function closeLb() {
-  lb.hidden = true;
-  lbImg.src = "";
-}
-document.querySelectorAll(".cert-img").forEach((btn) =>
-  btn.addEventListener("click", () => {
-    lbImg.src = btn.dataset.full;
-    lb.hidden = false;
-  }),
-);
-lb.addEventListener("click", (e) => {
-  if (e.target !== lbImg) closeLb();
-});
-addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && !lb.hidden) closeLb();
-});
+// ---------- lightbox (certificates on home page, screenshots on project pages) ----------
+var lightbox = document.getElementById("lightbox");
+var lightboxImg = document.getElementById("lbImg");
+var lightboxCaption = document.getElementById("lbCap");
+var lightboxButtons = document.querySelectorAll("[data-full]");
+var currentImage = 0;
 
-// circular favicon made from the profile photo (works on http/https: Live Server or GitHub Pages)
-(function () {
-  const img = new Image();
-  img.onload = () => {
-    try {
-      const c = document.createElement("canvas");
-      c.width = c.height = 64;
-      const x = c.getContext("2d");
-      x.beginPath();
-      x.arc(32, 32, 32, 0, 7);
-      x.clip();
-      const s = Math.min(img.width, img.height);
-      x.drawImage(img, (img.width - s) / 2, (img.height - s) * 0.2, s, s, 0, 0, 64, 64);
-      const l = document.querySelector('link[rel="icon"]');
-      l.type = "image/png";
-      l.href = c.toDataURL("image/png");
-    } catch (e) {}
-  };
-  img.src = "assets/profile.jpg";
-})();
+function showImage(index) {
+  // loop around at both ends
+  currentImage = (index + lightboxButtons.length) % lightboxButtons.length;
+  var button = lightboxButtons[currentImage];
+  lightboxImg.src = button.getAttribute("data-full");
+  lightboxImg.alt = button.getAttribute("data-alt");
+  lightboxCaption.textContent = button.getAttribute("data-alt");
+  lightbox.hidden = false;
+}
+
+function closeLightbox() {
+  lightbox.hidden = true;
+  lightboxImg.src = "";
+}
+
+if (lightbox && lightboxButtons.length > 0) {
+  lightboxButtons.forEach(function (button, index) {
+    button.addEventListener("click", function () {
+      showImage(index);
+    });
+  });
+
+  lightbox.querySelector(".lb-close").addEventListener("click", closeLightbox);
+
+  // prev / next buttons only exist on project pages
+  var prevBtn = lightbox.querySelector(".lb-prev");
+  var nextBtn = lightbox.querySelector(".lb-next");
+  if (prevBtn) prevBtn.addEventListener("click", function () { showImage(currentImage - 1); });
+  if (nextBtn) nextBtn.addEventListener("click", function () { showImage(currentImage + 1); });
+
+  // click on the dark area to close
+  lightbox.addEventListener("click", function (e) {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (lightbox.hidden) return;
+    if (e.key === "Escape") closeLightbox();
+    if (e.key === "ArrowLeft" && prevBtn) showImage(currentImage - 1);
+    if (e.key === "ArrowRight" && nextBtn) showImage(currentImage + 1);
+  });
+}
+
+// ---------- everything below is only for the home page ----------
+var typingEl = document.getElementById("typing");
+
+if (typingEl) {
+  // typing effect in the hero title
+  var words = ["Software Developer", "Data Analytics Learner", "AI & ML Enthusiast"];
+  var wordIndex = 0;
+  var charIndex = 0;
+  var deleting = false;
+
+  function typeWord() {
+    var word = words[wordIndex];
+    typingEl.textContent = word.substring(0, charIndex);
+
+    if (!deleting && charIndex === word.length) {
+      // finished typing, wait a bit then start deleting
+      deleting = true;
+      setTimeout(typeWord, 1400);
+      return;
+    }
+    if (deleting && charIndex === 0) {
+      deleting = false;
+      wordIndex = (wordIndex + 1) % words.length;
+    }
+
+    charIndex = deleting ? charIndex - 1 : charIndex + 1;
+    setTimeout(typeWord, deleting ? 40 : 90);
+  }
+
+  // people who prefer less motion just see the first word
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    typingEl.textContent = words[0];
+  } else {
+    typeWord();
+  }
+
+  // numbers in the hero count up from 0
+  var counters = document.querySelectorAll("[data-count]");
+  counters.forEach(function (el) {
+    var end = Number(el.getAttribute("data-count"));
+    var decimals = Number(el.getAttribute("data-dec") || 0);
+    var startTime = null;
+
+    function step(time) {
+      if (startTime === null) startTime = time;
+      var progress = Math.min((time - startTime) / 1500, 1);
+      el.textContent = (end * progress).toFixed(decimals);
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  });
+
+  // highlight the nav link of the section we are in + back to top button
+  var sections = document.querySelectorAll("main section[id]");
+  var topBtn = document.getElementById("top");
+
+  window.addEventListener("scroll", function () {
+    var current = "home";
+    sections.forEach(function (section) {
+      if (window.scrollY >= section.offsetTop - 140) {
+        current = section.id;
+      }
+    });
+    navItems.forEach(function (link) {
+      link.classList.toggle("active", link.getAttribute("href") === "#" + current);
+    });
+    topBtn.classList.toggle("show", window.scrollY > 500);
+  });
+
+  topBtn.addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  // ---------- contact form ----------
+  var form = document.getElementById("contactForm");
+  var statusText = document.getElementById("formStatus");
+
+  // returns true if the field is OK, otherwise shows an error message
+  function checkField(field) {
+    var value = field.value.trim();
+    var box = field.closest(".field");
+    var errorEl = box.querySelector(".err");
+    var message = "";
+
+    if (value === "") {
+      message = "This field is required.";
+    } else if (field.type === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+      message = "Please enter a valid email address.";
+    } else if (field.id === "message" && value.length < 10) {
+      message = "Message should be at least 10 characters.";
+    }
+
+    errorEl.textContent = message;
+    box.classList.toggle("invalid", message !== "");
+    return message === "";
+  }
+
+  var fields = form.querySelectorAll("input, textarea");
+  fields.forEach(function (field) {
+    field.addEventListener("blur", function () {
+      checkField(field);
+    });
+  });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    var allOk = true;
+    fields.forEach(function (field) {
+      if (!checkField(field)) allOk = false;
+    });
+
+    if (!allOk) {
+      statusText.className = "status bad";
+      statusText.textContent = "Please fix the highlighted fields.";
+      return;
+    }
+
+    // no backend, so this opens the visitor's email app with the message filled in
+    var name = form.elements["name"].value;
+    var email = form.elements["email"].value;
+    var subject = form.elements["subject"].value;
+    var message = form.elements["message"].value;
+    var body = "Name: " + name + "\nEmail: " + email + "\n\n" + message;
+
+    window.location.href =
+      "mailto:minodchathura2004@gmail.com?subject=" +
+      encodeURIComponent(subject) +
+      "&body=" +
+      encodeURIComponent(body);
+
+    statusText.className = "status ok";
+    statusText.textContent = "Thank you! Your email app is opening so you can send the message.";
+    form.reset();
+  });
+}

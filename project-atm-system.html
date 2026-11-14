@@ -1,66 +1,53 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="ATM Banking System - project by Minod Chathura." />
     <title>ATM Banking System | Minod Chathura</title>
-    <link rel="icon" type="image/jpeg" href="assets/profile.jpg" />
+    <link rel="icon" type="image/jpeg" href="assets/profile.jpeg" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="project-page">
-    <div id="progress"></div>
-    <canvas id="bg"></canvas>
-    <div class="blob b1"></div>
-    <div class="blob b2"></div>
+    <a class="skip" href="#main">Skip to main content</a>
+
     <header class="nav">
       <a href="index.html" class="logo">Minod<span>.</span></a>
       <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
-      <nav id="navLinks">
-        <a href="index.html">Home</a><a href="index.html#projects">All Projects</a
-        ><a href="index.html#contact">Contact</a>
+      <nav id="navLinks" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="index.html#projects">All Projects</a>
+        <a href="index.html#contact">Contact</a>
       </nav>
     </header>
-    <main>
+
+    <main id="main">
       <section class="p-hero">
         <a class="back" href="index.html#projects">&larr; Back to Projects</a>
         <p class="eyebrow">Project</p>
         <h1>ATM Banking System</h1>
         <p class="tags"><span>C</span></p>
-        <p class="lead">
-          A console-based ATM program written in C with account number and PIN verification for multiple
-          accounts.
-        </p>
+        <p class="lead">A console-based ATM program written in C with account number and PIN verification for multiple accounts.</p>
         <div class="btns">
-          <a
-            class="btn primary"
-            href="https://github.com/Minodchathura/ATM-Machine-project-"
-            target="_blank"
-            rel="noopener"
-            >View on GitHub</a
-          ><a class="btn" href="index.html#projects">All Projects</a>
+          <a class="btn primary" href="https://github.com/Minodchathura/ATM-Machine-project-" target="_blank" rel="noopener">View on GitHub</a>
+          <a class="btn" href="index.html#projects">All Projects</a>
         </div>
       </section>
+
       <section class="reveal">
         <h3 class="title">Overview</h3>
         <div class="cards">
           <div class="card">
-            <h4>Goal</h4>
-            <p>
-              To practise structured programming in C by simulating how an ATM verifies a user and handles
-              basic transactions.
-            </p>
+            <h4>Problem / Goal</h4>
+            <p>To practise structured programming in C by simulating how an ATM verifies a user and handles basic transactions.</p>
           </div>
           <div class="card">
             <h4>My Contribution</h4>
-            <p>
-              Wrote the whole program independently using functions, arrays, conditional statements and loops
-              to manage multiple accounts.
-            </p>
+            <p>Wrote the whole program independently using functions, arrays, conditional statements and loops to manage multiple accounts.</p>
           </div>
           <div class="card">
             <h4>Tools Used</h4>
@@ -68,6 +55,7 @@
           </div>
         </div>
       </section>
+
       <section class="reveal">
         <h3 class="title">Key Features</h3>
         <ul class="feat">
@@ -79,6 +67,7 @@
           <li>Structured data handling with arrays</li>
         </ul>
       </section>
+
       <section class="reveal">
         <h3 class="title">Screenshots</h3>
         <div class="gallery tall">
@@ -87,75 +76,54 @@
               type="button"
               class="shot-btn"
               data-full="assets/projects/atm/01-check-balance.png"
-              data-cap="Check Balance: Choose a card (k, s, i or l), select option 2, enter the PIN and the program shows the account balance."
-              aria-label="View Check Balance screenshot"
+              data-alt="Check Balance: Choose a card (k, s, i or l), select option 2, enter the PIN and the program shows the account balance."
+              aria-label="View Check Balance screenshot in full size"
             >
-              <img
-                src="assets/projects/atm/01-check-balance.png"
-                alt="ATM Banking System - Check Balance"
-                loading="lazy"
-              />
+              <img src="assets/projects/atm/01-check-balance.png" alt="ATM Banking System - Check Balance" loading="lazy" />
             </button>
-            <figcaption>
-              <b>Check Balance</b
-              ><span
-                >Choose a card (k, s, i or l), select option 2, enter the PIN and the program shows the
-                account balance.</span
-              >
-            </figcaption>
+            <figcaption><b>Check Balance</b><span>Choose a card (k, s, i or l), select option 2, enter the PIN and the program shows the account balance.</span></figcaption>
           </figure>
           <figure class="shot">
             <button
               type="button"
               class="shot-btn"
               data-full="assets/projects/atm/02-withdraw-money.png"
-              data-cap="Withdraw Money: Select option 1, enter the PIN (a wrong PIN is rejected and asked again), then the amount to withdraw and see the updated balance."
-              aria-label="View Withdraw Money screenshot"
+              data-alt="Withdraw Money: Select option 1, enter the PIN (a wrong PIN is rejected and asked again), then the amount to withdraw and see the updated balance."
+              aria-label="View Withdraw Money screenshot in full size"
             >
-              <img
-                src="assets/projects/atm/02-withdraw-money.png"
-                alt="ATM Banking System - Withdraw Money"
-                loading="lazy"
-              />
+              <img src="assets/projects/atm/02-withdraw-money.png" alt="ATM Banking System - Withdraw Money" loading="lazy" />
             </button>
-            <figcaption>
-              <b>Withdraw Money</b
-              ><span
-                >Select option 1, enter the PIN (a wrong PIN is rejected and asked again), then the amount to
-                withdraw and see the updated balance.</span
-              >
-            </figcaption>
+            <figcaption><b>Withdraw Money</b><span>Select option 1, enter the PIN (a wrong PIN is rejected and asked again), then the amount to withdraw and see the updated balance.</span></figcaption>
           </figure>
         </div>
       </section>
+
       <section class="reveal">
         <h3 class="title">What I Practised</h3>
-        <p class="tags">
-          <span>Functions</span><span>Arrays</span><span>Conditional Statements</span><span>Loops</span
-          ><span>Structured Data Handling</span>
-        </p>
+        <p class="tags"><span>Functions</span><span>Arrays</span><span>Conditional Statements</span><span>Loops</span><span>Structured Data Handling</span></p>
       </section>
+
       <section class="pn">
-        <a class="card" href="project-management-app.html"
-          ><span>&larr; Previous</span><b>Management App</b></a
-        >
-        <a class="card next" href="project-file-manager.html"
-          ><span>Next &rarr;</span><b>Python File Management App</b></a
-        >
+        <a class="card" href="project-management-app.html"><span>&larr; Previous</span><b>Management App</b></a>
+        <a class="card next" href="project-file-manager.html"><span>Next &rarr;</span><b>Python File Management App</b></a>
       </section>
     </main>
+
     <footer class="site-footer">
-      <p class="copy">&copy; <span id="year"></span> Minod Chathura. All rights reserved.</p>
+      <p class="copy">&copy; <span id="year">2026</span> Minod Chathura. Font: Poppins (Google Fonts).</p>
     </footer>
+
+    <!-- lightbox for screenshots -->
     <div id="lightbox" class="lightbox" hidden>
       <button class="lb-close" type="button" aria-label="Close">&times;</button>
-      <button class="lb-nav lb-prev" type="button" aria-label="Previous">&#8249;</button>
+      <button class="lb-nav lb-prev" type="button" aria-label="Previous screenshot">&#8249;</button>
       <figure>
-        <img id="lbImg" alt="Screenshot full size" />
+        <img id="lbImg" alt="" />
         <figcaption id="lbCap"></figcaption>
       </figure>
-      <button class="lb-nav lb-next" type="button" aria-label="Next">&#8250;</button>
+      <button class="lb-nav lb-next" type="button" aria-label="Next screenshot">&#8250;</button>
     </div>
-    <script src="project.js"></script>
+
+    <script src="script.js"></script>
   </body>
 </html>
